@@ -15,9 +15,11 @@ import java.util.Collections;
 public class App {
 
     //数据源
-    private static final String URL = "jdbc:p6spy:mysql://118.24.93.175:3306/hsj_test?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "Hsj@123456";
+    private static final String URL = "URL";
+    private static final String USERNAME = "USERNAME";
+    private static final String PASSWORD = "PASSWORD";
+    //表信息
+    private static final String TABLE = "TABLE";
 
     public static void main(String[] args) {
         FastAutoGenerator.create(URL, USERNAME, PASSWORD)
@@ -40,7 +42,7 @@ public class App {
                             .pathInfo(Collections.singletonMap(OutputFile.xml, "D://gen")); // 设置mapperXml生成路径
                 })
                 .strategyConfig(builder -> {
-                    builder.addInclude("deposit_listing_relevance");
+                    builder.addInclude(TABLE);
                 })
                 .templateEngine(new FreemarkerTemplateEngine()) // 使用Freemarker引擎模板，默认的是Velocity引擎模板
                 .execute();
