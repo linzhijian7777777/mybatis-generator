@@ -9,10 +9,10 @@ import java.sql.Types;
 import java.util.Collections;
 
 /**
- * Hello world!
- */
+ * @Author linzj
+ * @Date 2024/4/17 13:29
+ **/
 public class App {
-
 
     //数据源
     private static final String URL = "jdbc:p6spy:mysql://118.24.93.175:3306/hsj_test?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai";
@@ -40,7 +40,7 @@ public class App {
                             .pathInfo(Collections.singletonMap(OutputFile.xml, "D://gen")); // 设置mapperXml生成路径
                 })
                 .strategyConfig(builder -> {
-                    builder.addInclude("deposit_sku_storage");
+                    builder.addInclude("deposit_listing_relevance");
                 })
                 .templateEngine(new FreemarkerTemplateEngine()) // 使用Freemarker引擎模板，默认的是Velocity引擎模板
                 .execute();
